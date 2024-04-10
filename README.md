@@ -1,4 +1,4 @@
-## Users Microservice
+## Users Microservice for FreelancerApp
 * The users microservice is responsible for creating sellers and manging sellers and buyers.
 * A buyer can become a seller by creating a profile.
 * Sellers can update profile, view sellers dashboard information.
