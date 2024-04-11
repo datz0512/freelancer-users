@@ -22,7 +22,7 @@ import {
 } from '@users/queues/user.consumer';
 
 const SERVER_PORT = 4003;
-const log: Logger = winstonLogger(`${config.ELASTIC_SEARCH_URL}`, 'usersServer', 'debug');
+const log: Logger = winstonLogger(`${config.ELASTIC_SEARCH_URL}`, 'usersService', 'debug');
 
 const start = (app: Application): void => {
   securityMiddleware(app);

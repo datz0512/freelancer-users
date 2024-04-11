@@ -21,6 +21,7 @@
   "dependencies": {
     "@datz0512/freelancer-shared": "^0.0.8",
     "@elastic/elasticsearch": "^8.13.1",
+    "@faker-js/faker": "^8.4.1",
     "amqplib": "^0.10.3",
     "bcryptjs": "^2.4.3",
     "cloudinary": "^2.1.0",
@@ -38,6 +39,7 @@
     "pino-pretty": "^11.0.0",
     "typescript": "^5.4.4",
     "typescript-transform-paths": "^3.4.7",
+    "uuid": "^9.0.1",
     "winston": "^3.13.0"
   },
   "devDependencies": {
@@ -51,6 +53,7 @@
     "@types/jest": "^29.5.12",
     "@types/jsonwebtoken": "^9.0.6",
     "@types/lodash": "^4.17.0",
+    "@types/uuid": "^9.0.8",
     "@typescript-eslint/eslint-plugin": "^7.6.0",
     "@typescript-eslint/parser": "^7.6.0",
     "eslint-config-prettier": "^9.1.0",

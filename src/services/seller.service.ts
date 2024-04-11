@@ -29,7 +29,7 @@ const getRandomSellers = async (size: number): Promise<ISellerDocument[]> => {
   return sellers;
 };
 
-const createSeller = async (sellerData: string): Promise<ISellerDocument> => {
+const createSeller = async (sellerData: ISellerDocument): Promise<ISellerDocument> => {
   const createdSeller: ISellerDocument = (await SellerModel.create(sellerData)) as ISellerDocument;
   await updateBuyerIsSellerProp(`${createdSeller.email}`);
 

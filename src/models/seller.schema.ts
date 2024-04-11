@@ -3,7 +3,7 @@ import { Model, Schema, model } from 'mongoose';
 
 const sellerSchema: Schema = new Schema(
   {
-    fullname: { type: String, required: true },
+    fullName: { type: String, required: true },
     username: { type: String, required: true, index: true },
     email: { type: String, required: true, index: true },
     profilePicture: { type: String, required: true },
