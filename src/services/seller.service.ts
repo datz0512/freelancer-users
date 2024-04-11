@@ -69,6 +69,10 @@ const updateSellerOngoingJobsProp = async (sellerId: string, ongoingJobs: number
   await SellerModel.updateOne({ _id: sellerId }, { $inc: { ongoingJobs } }).exec();
 };
 
+const updateSellerCancelledJobsProp = async (sellerId: string): Promise<void> => {
+  await SellerModel.updateOne({ _id: sellerId }, { $inc: { ongoingJobs: -1, cancelledJobs: 1 } }).exec();
+};
+
 const updateSellerCompletedJobsProp = async (data: IOrderMessage): Promise<void> => {
   const { sellerId, ongoingJobs, completedJobs, totalEarnings, recentDelivery } = data;
   await SellerModel.updateOne(
@@ -109,6 +113,7 @@ export {
   updateSeller,
   updateTotalGigsCount,
   updateSellerOngoingJobsProp,
+  updateSellerCancelledJobsProp,
   updateSellerCompletedJobsProp,
   updateSellerReview
 };

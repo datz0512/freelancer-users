@@ -14,7 +14,12 @@ import { checkConnection } from '@users/elasticsearch';
 import { appRoutes } from '@users/routes';
 import { createConnection } from '@users/queues/connection';
 import { Channel } from 'amqplib';
-import { consumeBuyerDirectMessage } from '@users/queues/user.consumer';
+import {
+  consumeBuyerDirectMessage,
+  consumeReviewFanoutMessage,
+  consumeSeedGigDirectMessage,
+  consumeSellerDirectMessage
+} from '@users/queues/user.consumer';
 
 const SERVER_PORT = 4003;
 const log: Logger = winstonLogger(`${config.ELASTIC_SEARCH_URL}`, 'usersServer', 'debug');
@@ -63,6 +68,9 @@ const routesMiddleware = (app: Application): void => {
 const startQueues = async (): Promise<void> => {
   const userChannel: Channel = (await createConnection()) as Channel;
   await consumeBuyerDirectMessage(userChannel);
+  await consumeSellerDirectMessage(userChannel);
+  await consumeReviewFanoutMessage(userChannel);
+  await consumeSeedGigDirectMessage(userChannel);
 };
 
 const startElasticSearch = (): void => {
