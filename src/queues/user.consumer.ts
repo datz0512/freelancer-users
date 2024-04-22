@@ -16,7 +16,7 @@ import { publishDirectMessage } from './user.producer';
 
 const log: Logger = winstonLogger(`${config.ELASTIC_SEARCH_URL}`, 'usersServiceConsumer', 'debug');
 
-//Consume from auth service
+//Consume from auth service & order service
 const consumeBuyerDirectMessage = async (channel: Channel): Promise<void> => {
   try {
     if (!channel) {
@@ -55,7 +55,7 @@ const consumeBuyerDirectMessage = async (channel: Channel): Promise<void> => {
   }
 };
 
-//Consume from order service
+//Consume from others service
 const consumeSellerDirectMessage = async (channel: Channel): Promise<void> => {
   try {
     if (!channel) {
@@ -128,7 +128,7 @@ const consumeReviewFanoutMessage = async (channel: Channel): Promise<void> => {
   }
 };
 
-//Consume from gig service
+//Consume from gigService to get sellers and pubish sellers to gigService
 const consumeSeedGigDirectMessage = async (channel: Channel): Promise<void> => {
   try {
     if (!channel) {
