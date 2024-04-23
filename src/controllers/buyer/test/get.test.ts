@@ -1,5 +1,10 @@
 import { Request, Response } from 'express';
-import { authUserPayload, buyerDocument, buyerMockRequest, buyerMockResponse } from './mocks/buyer.mock';
+import {
+  authUserPayload,
+  buyerDocument,
+  buyerMockRequest,
+  buyerMockResponse
+} from '@users/controllers/buyer/test/mocks/buyer.mock';
 import * as buyer from '@users/services/buyer.service';
 import { currentUsername, email, username } from '@users/controllers/buyer/get';
 

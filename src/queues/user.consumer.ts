@@ -12,7 +12,7 @@ import {
   updateSellerReview,
   updateTotalGigsCount
 } from '@users/services/seller.service';
-import { publishDirectMessage } from './user.producer';
+import { publishDirectMessage } from '@users/queues/user.producer';
 
 const log: Logger = winstonLogger(`${config.ELASTIC_SEARCH_URL}`, 'usersServiceConsumer', 'debug');
 

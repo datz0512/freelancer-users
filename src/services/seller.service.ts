@@ -1,7 +1,7 @@
 import { IOrderMessage, IRatingTypes, IReviewMessageDetails, ISellerDocument } from '@datz0512/freelancer-shared';
 import { SellerModel } from '@users/models/seller.schema';
 import mongoose from 'mongoose';
-import { updateBuyerIsSellerProp } from './buyer.service';
+import { updateBuyerIsSellerProp } from '@users/services/buyer.service';
 
 const getSellerById = async (sellerId: string): Promise<ISellerDocument | null> => {
   const seller: ISellerDocument | null = (await SellerModel.findOne({
